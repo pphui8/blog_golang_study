@@ -1,3 +1,7 @@
+# notes of learning golang
+
+### [youtube video](https://www.youtube.com/watch?v=YS4e4q9oBaU)
+
 ## variable (simillar to rust)
 > 1. shadow in go:
 > 2. you can`t declear same variable twice but you can shadow that in a smaller scope (ex: global to block)
