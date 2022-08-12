@@ -58,10 +58,33 @@ const (
 )
 ```
 ### array
+> size of array can`t be changed during the runtime
+> so we can use slice instead of array
+> or use make function to create a bigger array
 ```go
 grades := [3]int{97, 85, 93}
 grades := [...]int{97, 85, 93}
 
 var students [3]string
+
+// slice
+a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+b := a[:]
+c := a[3 : ]    // from 4th to the end
+d := a[ : 6]    // from 0th to 6th
+e := a[3 : 6]   // from 4th to 6th
+
+// make function
+// make(type, length, capacity)
+// length indecate the length of value 0
+a := make([]int, 3) // [0, 0, 0]
+a := make([]int, 3, 100)
+
+// append function
+// result = append(target, value...)
+a = append(a, 10)
+
+// spread operation
+a = append(a. []int{1, 2, 3}...)
 ```
 
