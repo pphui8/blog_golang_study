@@ -123,7 +123,9 @@ pop, ok := statePopulations["California"]
 // returns wether "California" is exsisting
 _, ok := statePopulations["California"]
 ```
+
 #### struct
+
 ```go
 // declear
 type Doctor struct {
@@ -152,7 +154,9 @@ aDoctor := Doctor{
 // sytax candy (anony)
 aDoctor := struct{name string}{name: "Dr. Strange"}
 ```
-#### inherit
+
+#### inherit (by using composition via embedding)
+
 ``` go
 type Animal struct {
 	Name string
@@ -170,7 +174,9 @@ b.Origin = "Australia"
 b.SpeedKPH = 48
 b.CanFly = false
 ```
-#### tag (limiting the value)
+
+#### tag (describe the value)
+
 ```go
 type Animal struct {
 	Name string `required max:"100"`
