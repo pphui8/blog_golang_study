@@ -1,17 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
-
-type Animal struct {
-	Name string `required max:"100"`
-	Origin string
-}
+import "fmt"
 
 func main() {
-	t := reflect.TypeOf(Animal{})
-	field, _ := t.FieldByName("Name")
-	fmt.Println(field.Tag)
+	var ms *myStruct
+	ms = new(myStruct)
+	ms.foo = 42
+	fmt.Println((*ms).foo)
+}
+
+type myStruct struct {
+	foo int
 }

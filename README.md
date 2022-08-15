@@ -2,6 +2,27 @@
 
 ### [youtube video](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 
+---
+## index
+> ## README.md
+> #### Variables
+> #### Arrays and Slices 
+> #### Maps and Structs
+> #### If and Switch Statements 
+> #### Looping 
+
+---
+
+> ## README2.md
+> #### Defer, Panic, and Recover 
+> #### Pointers 
+> #### Functions 
+> #### Interfaces 
+> #### Goroutines 
+> #### Channels
+
+---
+
 ## variable (simillar to rust)
 > 1. shadow in go:
 > 2. you can`t declear same variable twice but you can shadow that in a smaller scope (ex: global to block)
@@ -66,7 +87,9 @@ const (
     YB
 )
 ```
-### array
+---
+
+### array & slice
 > size of array can`t be changed during the runtime
 > so we can use slice instead of array
 > or use make function to create a bigger array
@@ -96,6 +119,8 @@ a = append(a, 10)
 // spread operation
 a = append(a. []int{1, 2, 3}...)
 ```
+
+---
 
 ## maps and structs
 #### map
@@ -186,4 +211,81 @@ type Animal struct {
 t := reflect.TypeOf(Animal{})
 field, _ := t.FieldByName("Name")
 fmt.Println(field.Tag)
+```
+
+---
+
+## if - else statement
+> 1. initialize sytax
+```go
+if pop, ok := statePopulations["Florida"]; ok {
+    fmt.Println(pop)
+}
+```
+
+> 2. switch
+```go
+i := 10
+switch {
+    case i < 10:
+        fmt.Println("less than 10")
+        // if we wanna go ahead
+        fallthrough
+    case i < 20:
+        fmt.Println("less than 20")
+        // if we wanna break this ealry
+        break
+    default:
+        fmt.Println("less than 10")
+}
+```
+
+> 3. type switch
+```go
+switch i.(type) {
+    case int:
+        fmt.Println("i is a int")
+    case float64:
+        fmt.Println("i is a float64")
+    case string:
+        fmt.Println("i is a string")
+    default:
+        fmt.Println("i has another type")
+}
+```
+
+---
+
+## loop
+> 1.1++ is not a pression, it`s a statement
+
+> 2.```for i < 5 {``` stands for while loop
+> or just ```for {``` stands for infinit loop
+
+> 3.break with laber
+```go
+// define a laber here
+Loop:
+    for i := 1; i <= 3; i++ {
+        for j := 1; i <= 3; i++ {
+            fmt.Println(i * j)
+            if i * j >= 3 {
+                // break here
+                break Loop
+            }
+        }
+    }
+```
+
+> 4.loops for collection
+```go
+s := [3]int{1, 2, 3}
+for k, v := range s {
+    fmt.Println(k, v)
+}
+// or
+s := "hello world"
+for k, v := range s {
+    fmt.Println(k, string(v))
+}
 ```
