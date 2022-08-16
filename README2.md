@@ -115,3 +115,102 @@ b := a
 ---
 
 ## Function
+> 1.upper case/lower case descide visibility
+
+> 2.camml naming
+
+> 3.sytax sugar
+```go
+func a(a string, b string) {
+// or simply: func a(a, b string)
+
+}
+```
+
+> 4.recive mutiple value
+```go
+func sum(values ...int) {
+
+}
+```
+
+> 5.return pointer would be fine because golang won`t clean that
+
+> 6.define return value name on declear
+```go
+func a() (result int) {
+	result = 10
+	// return the result
+	return
+}
+```
+
+> 7.return err
+```go
+func devide(a, b float64) (int, error) {
+	if b == 0.0 {
+		return 0.0, fmt.Errorg("Cannot divide by zero")
+	}
+	return a / b, nil
+}
+```
+
+> 8.annonyous funcion
+```go
+func main() {
+	func() {
+		// do something
+	}()
+	// or passing some value
+	func(i int) {
+		// do something
+	}(i)
+}
+```
+
+> 9.variable function
+```go
+f := func() {
+	// do something
+}
+
+// or like js
+var f func() = func() {
+	// do something
+}
+
+// or spreate declear
+var devide func(float64, float64) (float64, error)
+devide = func(a, b float64) (float64, error) {
+	// do something
+}
+```
+
+> 10.make a function method
+```go
+func main() {
+	g := greeter {
+		greeting: "Hello",
+		name: "World",
+	}
+	g.greet()
+}
+
+type greeter struct {
+	greeting string
+	name string
+}
+ 
+// invoked by g.geet()
+// g stands for the name of greeter to provde a context
+// g is a copy not a pointer
+// so this is actually a method that given to the greeter struct
+func (g greeter) greet() {
+	fmt.Println(g.greeting, g.name)
+}
+// or make this a pointer
+func (g *greeter) greet() {
+	// auto dereference
+	fmt.Println(g.greeting, g.name)
+}
+```

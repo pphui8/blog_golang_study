@@ -3,12 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	var ms *myStruct
-	ms = new(myStruct)
-	ms.foo = 42
-	fmt.Println((*ms).foo)
+	g := greeter {
+		greeting: "Hello",
+		name: "World",
+	}
+	g.greet()
 }
 
-type myStruct struct {
-	foo int
+type greeter struct {
+	greeting string
+	name string
+}
+ 
+// invoked by g.geet()
+// g stands for the name of greeter
+// so this is actually a method that given to the greeter struct
+func (g *greeter) greet() {
+	fmt.Println(g.greeting, g.name)
 }

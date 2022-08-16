@@ -3,8 +3,8 @@
 ### [youtube video](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 
 ---
-## index
-> ## README.md
+# index
+## README.md
 > #### Variables
 > #### Arrays and Slices 
 > #### Maps and Structs
@@ -13,10 +13,14 @@
 
 ---
 
-> ## README2.md
+## README2.md
 > #### Defer, Panic, and Recover 
 > #### Pointers 
 > #### Functions 
+
+---
+
+## README3.md
 > #### Interfaces 
 > #### Goroutines 
 > #### Channels
