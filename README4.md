@@ -59,8 +59,9 @@ go func(ch chan<- int) {
 }
 ```
 
-##### 1. declear a channel that receive mutiple messages
-not a idear method
+##### 1. Buffered channel
+declear a channel that receive mutiple messages  
+not a idear method  
 ```go
 ch := make(chan int, 50)
 ```
