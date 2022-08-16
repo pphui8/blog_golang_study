@@ -2,22 +2,22 @@ package main
 
 import "fmt"
 
+var ch = make(chan struct{})
+
 func main() {
-	g := greeter {
-		greeting: "Hello",
-		name: "World",
-	}
-	g.greet()
+	go func() {
+		ch <- struct{}{}
+	}()
+	<-ch
 }
 
-type greeter struct {
-	greeting string
-	name string
-}
- 
-// invoked by g.geet()
-// g stands for the name of greeter
-// so this is actually a method that given to the greeter struct
-func (g *greeter) greet() {
-	fmt.Println(g.greeting, g.name)
+func logger() {
+	for {
+		select {
+		case entry := <-logCh:
+			fmt.Println(entry)
+		case <-doneCh:
+			return
+		}
+	}
 }
